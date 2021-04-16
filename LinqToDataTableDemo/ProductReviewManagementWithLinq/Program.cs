@@ -43,15 +43,15 @@ namespace ProductReviewManagementWithLinq
 
             };
 
-            foreach (var list in productReviewList)
+            /*foreach (var list in productReviewList)
             {
                 Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
                     + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
-            }
+            }*/
 
             //UC2
             Management management = new Management();
-            //  management.TopRecords(productReviewList);
+            management.TopRecords(productReviewList);
 
             //UC3
             //management.SelectedRecords(productReviewList);

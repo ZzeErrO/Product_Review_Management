@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductReviewManagementWithLinq", "ProductReviewManagementWithLinq\ProductReviewManagementWithLinq.csproj", "{945FBF90-74DE-4030-80D0-37DE60BCF871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToDataTable", "LinqToDataTable\LinqToDataTable.csproj", "{70B609C8-DA79-4C88-9907-52E1E49057B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{945FBF90-74DE-4030-80D0-37DE60BCF871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945FBF90-74DE-4030-80D0-37DE60BCF871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945FBF90-74DE-4030-80D0-37DE60BCF871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945FBF90-74DE-4030-80D0-37DE60BCF871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B609C8-DA79-4C88-9907-52E1E49057B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B609C8-DA79-4C88-9907-52E1E49057B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B609C8-DA79-4C88-9907-52E1E49057B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B609C8-DA79-4C88-9907-52E1E49057B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C9443DC-CA25-4FB6-97A4-B0B1493696F5}
+	EndGlobalSection
+EndGlobal

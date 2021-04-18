@@ -69,7 +69,13 @@ namespace ProductReviewManagementWithLinq
             //management.RetrieveProductIdAndRating(productReviewList);
 
             //UC8
-            management.CreateDataTable(productReviewList);
+            //management.CreateDataTable(productReviewList);
+
+            //UC9
+            //management.IsLikeTrue(productReviewList);
+
+            //UC10
+            management.AverageRating(productReviewList);
 
             Console.ReadKey();
         }

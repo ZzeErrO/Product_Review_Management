@@ -111,6 +111,39 @@ namespace ProductReviewManagementWithLinq
 
         }
 
+        /*public void IsLikeTrue(List<ProductReview> listProductReview)
+        {
+            dataTable.Columns.Add("ProductID");
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            foreach (var item in listProductReview)
+            {
+                dataTable.Rows.Add(item.ProducID, item.UserID, item.Rating, item.Review, item.isLike);
+            }
+
+            //Console.WriteLine("ProductID \t UserID \t Rating \t Review \t isLike");
+
+            var productNames = from product in dataTable.AsEnumerable()
+                               where product.Field<string>("isLike") == "true"
+                               select product.Field<string>("isLike");
+
+            foreach (var productName in productNames)
+            {
+                Console.WriteLine(productName);
+            }
+
+        }*/
+
+        public void AverageRating(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.Average(s => s.Rating);
+
+            Console.WriteLine("Average Rating: " + recordedData);
+
+        }
+
     }
 
 }

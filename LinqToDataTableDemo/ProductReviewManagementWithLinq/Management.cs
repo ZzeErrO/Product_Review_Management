@@ -144,6 +144,17 @@ namespace ProductReviewManagementWithLinq
 
         }
 
+        public void ReviewIsNice(List<ProductReview> listProductReview)
+        {
+            var recordedData = from product in listProductReview
+                               where product.Review == "nice"
+                               select product;
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+            }
+        }
     }
 
 }

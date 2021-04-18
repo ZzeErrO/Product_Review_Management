@@ -75,7 +75,10 @@ namespace ProductReviewManagementWithLinq
             //management.IsLikeTrue(productReviewList);
 
             //UC10
-            management.AverageRating(productReviewList);
+            //management.AverageRating(productReviewList);
+
+            //UC11
+            management.ReviewIsNice(productReviewList);
 
             Console.ReadKey();
         }

@@ -111,7 +111,7 @@ namespace ProductReviewManagementWithLinq
 
         }
 
-        /*public void IsLikeTrue(List<ProductReview> listProductReview)
+       /* public void IsLikeTrue(List<ProductReview> listProductReview)
         {
             dataTable.Columns.Add("ProductID");
             dataTable.Columns.Add("UserID");
@@ -127,11 +127,11 @@ namespace ProductReviewManagementWithLinq
 
             var productNames = from product in dataTable.AsEnumerable()
                                where product.Field<string>("isLike") == "true"
-                               select product.Field<string>("isLike");
+                               select product;
 
-            foreach (var productName in productNames)
+            foreach (DataRow productName in productNames)
             {
-                Console.WriteLine(productName);
+                Console.WriteLine(productName["isLike"]);
             }
 
         }*/
@@ -149,6 +149,20 @@ namespace ProductReviewManagementWithLinq
             var recordedData = from product in listProductReview
                                where product.Review == "nice"
                                select product;
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID
+                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+            }
+        }
+
+        public void SimilarUserID(List<ProductReview> listProductReview)
+        {
+            var recordedData = from product in listProductReview
+                               where product.UserID == 10
+                               orderby product.Rating ascending
+                               select product;
+                               
             foreach (var list in recordedData)
             {
                 Console.WriteLine("ProductID:- " + list.ProducID + " " + "UserID:- " + list.UserID

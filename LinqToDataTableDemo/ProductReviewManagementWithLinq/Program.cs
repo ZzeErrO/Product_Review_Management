@@ -24,7 +24,12 @@ namespace ProductReviewManagementWithLinq
                 new ProductReview(){ProducID=8,UserID=7,Rating=1,Review="Good",isLike=false},
                 new ProductReview(){ProducID=8,UserID=8,Rating=9,Review="nice",isLike=true},
                 new ProductReview(){ProducID=2,UserID=9,Rating=10,Review="nice",isLike=true},
-                new ProductReview(){ProducID=10,UserID=10,Rating=8,Review="nice",isLike=true},
+                new ProductReview(){ProducID=10,UserID=10,Rating=8,Review="nice",isLike=false},
+                new ProductReview(){ProducID=1,UserID=10,Rating=7,Review="nice",isLike=true},
+                new ProductReview(){ProducID=0,UserID=10,Rating=6,Review="bad",isLike=true},
+                new ProductReview(){ProducID=11,UserID=10,Rating=4,Review="nice",isLike=false},
+                new ProductReview(){ProducID=9,UserID=10,Rating=5,Review="bad",isLike=true},
+                new ProductReview(){ProducID=7,UserID=10,Rating=2,Review="Good",isLike=true},
                 new ProductReview(){ProducID=11,UserID=11,Rating=3,Review="nice",isLike=true},
                 new ProductReview(){ProducID=9,UserID=12,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProducID=12,UserID=13,Rating=6,Review="nice",isLike=true},
@@ -78,7 +83,10 @@ namespace ProductReviewManagementWithLinq
             //management.AverageRating(productReviewList);
 
             //UC11
-            management.ReviewIsNice(productReviewList);
+            //management.ReviewIsNice(productReviewList);
+
+            //UC12
+            management.SimilarUserID(productReviewList);
 
             Console.ReadKey();
         }

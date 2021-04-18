@@ -66,7 +66,10 @@ namespace ProductReviewManagementWithLinq
             //management.SkipRecoreds(productReviewList);
 
             //UC7
-            management.RetrieveProductIdAndRating(productReviewList);
+            //management.RetrieveProductIdAndRating(productReviewList);
+
+            //UC8
+            management.CreateDataTable(productReviewList);
 
             Console.ReadKey();
         }

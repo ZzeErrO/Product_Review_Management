@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Data;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ namespace ProductReviewManagementWithLinq
 {
     class Management
     {
-        //public readonly DataTable dataTable = new DataTable();
+        public readonly DataTable dataTable = new DataTable();
         public void TopRecords(List<ProductReview> listProductReview)
         {
             var recordedData = (from productReviews in listProductReview
@@ -83,6 +83,32 @@ namespace ProductReviewManagementWithLinq
             {
                 Console.WriteLine(list.ProducID + "--------" + list.Rating);
             }
+        }
+
+        public void CreateDataTable(List<ProductReview> listProductReview)
+        {
+            dataTable.Columns.Add("ProductID");
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            foreach (var item in listProductReview)
+            {
+                dataTable.Rows.Add(item.ProducID,item.UserID,item.Rating,item.Review,item.isLike);
+            }
+
+            Console.WriteLine("ProductID \t UserID \t Rating \t Review \t isLike");
+
+            for (int i = 0; i < 25; i++)
+            {
+                Console.WriteLine(dataTable.Rows[i].Field<string>("ProductID") + "\t\t"
+                                + dataTable.Rows[i].Field<string>("UserID") + "\t\t"
+                                + dataTable.Rows[i].Field<string>("Rating") + "\t\t"
+                                + dataTable.Rows[i].Field<string>("Review") + "\t\t"
+                                + dataTable.Rows[i].Field<string>("isLike")
+                                );
+            }
+
         }
 
     }

@@ -55,7 +55,7 @@ namespace ProductReviewManagementWithLinq
             }*/
 
             //UC2
-            Management management = new Management();
+            Management management = new Management(productReviewList);
             //management.TopRecords(productReviewList);
 
             //UC3
@@ -74,10 +74,10 @@ namespace ProductReviewManagementWithLinq
             //management.RetrieveProductIdAndRating(productReviewList);
 
             //UC8
-            //management.CreateDataTable(productReviewList);
+            //management.CreateDataTable();
 
             //UC9
-            //management.IsLikeTrue(productReviewList);
+            management.IsLikeTrue();
 
             //UC10
             //management.AverageRating(productReviewList);
@@ -86,7 +86,7 @@ namespace ProductReviewManagementWithLinq
             //management.ReviewIsNice(productReviewList);
 
             //UC12
-            management.SimilarUserID(productReviewList);
+            ///management.SimilarUserID(productReviewList);
 
             Console.ReadKey();
         }

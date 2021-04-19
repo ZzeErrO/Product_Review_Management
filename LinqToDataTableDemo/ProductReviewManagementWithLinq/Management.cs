@@ -10,6 +10,20 @@ namespace ProductReviewManagementWithLinq
     class Management
     {
         public readonly DataTable dataTable = new DataTable();
+
+        public Management(List<ProductReview> listProductReview)
+        {
+            dataTable.Columns.Add("ProductID");
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike");
+            foreach (var item in listProductReview)
+            {
+                dataTable.Rows.Add(item.ProducID, item.UserID, item.Rating, item.Review, item.isLike);
+            }
+        }
+
         public void TopRecords(List<ProductReview> listProductReview)
         {
             var recordedData = (from productReviews in listProductReview
@@ -85,21 +99,11 @@ namespace ProductReviewManagementWithLinq
             }
         }
 
-        public void CreateDataTable(List<ProductReview> listProductReview)
+        public void CreateDataTable()
         {
-            dataTable.Columns.Add("ProductID");
-            dataTable.Columns.Add("UserID");
-            dataTable.Columns.Add("Rating");
-            dataTable.Columns.Add("Review");
-            dataTable.Columns.Add("isLike");
-            foreach (var item in listProductReview)
-            {
-                dataTable.Rows.Add(item.ProducID,item.UserID,item.Rating,item.Review,item.isLike);
-            }
-
             Console.WriteLine("ProductID \t UserID \t Rating \t Review \t isLike");
 
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 Console.WriteLine(dataTable.Rows[i].Field<string>("ProductID") + "\t\t"
                                 + dataTable.Rows[i].Field<string>("UserID") + "\t\t"
@@ -111,30 +115,19 @@ namespace ProductReviewManagementWithLinq
 
         }
 
-       /* public void IsLikeTrue(List<ProductReview> listProductReview)
+        public void IsLikeTrue()
         {
-            dataTable.Columns.Add("ProductID");
-            dataTable.Columns.Add("UserID");
-            dataTable.Columns.Add("Rating");
-            dataTable.Columns.Add("Review");
-            dataTable.Columns.Add("isLike");
-            foreach (var item in listProductReview)
+
+            var recordData = (from rows in dataTable.AsEnumerable()
+                              where rows.Field<string>("isLike") == "True"
+                              select rows);
+
+            foreach (DataRow row in recordData) 
             {
-                dataTable.Rows.Add(item.ProducID, item.UserID, item.Rating, item.Review, item.isLike);
+                Console.WriteLine("ProductId:{0},UserId:{1},Rating:{2},Review:{3},isLike:{4}", row["ProductId"], row["UserId"], row["Rating"], row["Review"], row["isLike"]);
+
             }
-
-            //Console.WriteLine("ProductID \t UserID \t Rating \t Review \t isLike");
-
-            var productNames = from product in dataTable.AsEnumerable()
-                               where product.Field<string>("isLike") == "true"
-                               select product;
-
-            foreach (DataRow productName in productNames)
-            {
-                Console.WriteLine(productName["isLike"]);
-            }
-
-        }*/
+        }
 
         public void AverageRating(List<ProductReview> listProductReview)
         {
